@@ -4,17 +4,17 @@ import "fmt"
 
 func main() {
 	array := []int{10, 15, 3, 7}
-	fmt.Println(checkIfElementPairCanAddTo(array, 11))
+	fmt.Println(checkIfElementPairCanAddTo(array, 17))
 }
 
-func checkIfElementPairCanAddTo(array []int, sum int) bool {
+func checkIfElementPairCanAddTo(array []int, sum int) (bool, int, int) {
 	existingItemsMap := make(map[int]int)
 	for i, ithElement := range array {
-		_, isAvailable := existingItemsMap[sum-ithElement]
+		j, isAvailable := existingItemsMap[sum-ithElement]
 		if isAvailable {
-			return true
+			return true, j, i
 		}
 		existingItemsMap[ithElement] = i
 	}
-	return false
+	return false, 0, 0
 }
