@@ -10,9 +10,9 @@ func main() {
 func getProductArray(array []int, length int) []int {
 	var result = make([]int, length)
 	temp := 1
-	for i := 0; i < length; i++ {
+	for i, ithElement := range array {
 		result[i] = temp
-		temp *= array[i]
+		temp *= ithElement
 	}
 
 	temp = 1
