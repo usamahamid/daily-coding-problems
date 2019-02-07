@@ -2,6 +2,7 @@ package main
 
 import "fmt"
 
+// Pair holds two Integers
 type Pair struct {
 	a int
 	b int
